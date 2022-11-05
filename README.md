@@ -1,11 +1,11 @@
 # Ecommerce-Escalab
 ## Git Flow
 
-`git pull --rebase origin master`
-Pull last commits from master
+`git pull --rebase origin main`
+Pull last commits from main
 
 `git checkout -b {name-of-branch}`
-Create a new branch from master
+Create a new branch from main
 
 `git add .`
 Add all files with changes bofere commit
@@ -18,10 +18,10 @@ Push change to the new branch
 
 `Create a PR in github.com`
 
-`Merge PR into master`
+`Merge PR into main`
 
-`git checkout master`
-go back to master
+`git checkout main`
+go back to main
 
-`git pull --rebase origin master`
-Pull last commits from master
+`git pull --rebase origin main`
+Pull last commits from main
