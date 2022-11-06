@@ -22,7 +22,9 @@
       <nav>
         <div class="navContainer">
           <a href="#" class="logo">Shoes Shop!</a>
-          <i class="bx bx-shopping-bag" id="cart-icon"></i>
+          <div onclick="abrirCarrito()">
+            <i class="bx bx-shopping-bag" id="cart-icon"> </i>
+          </div>
         </div>
       </nav>
     </header>
@@ -34,6 +36,13 @@
         id="shop-content"
       ></div>
     </section>
+    <div class="loading-mask justify-content-end invisible" id="abrirCarrito">
+      <div
+        class="bg-light h-100 fade-in one p-4"
+        style="width: 400px; max-width: 100%; overflow-y: auto"
+      ></div>
+    </div>
     <script src="./code_mercadolibre.js" type="module"></script>
+    <script src="../carrito de compras/carrito.js"></script>
   </body>
 </html>
