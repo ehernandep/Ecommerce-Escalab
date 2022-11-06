@@ -63,7 +63,7 @@ const mostrarProductos = () => {
     document.getElementById('shop-content').innerHTML = shoes;
   });
 };
-
+console.log(productos)
 mostrarProductos();
 
 cargarDatos();

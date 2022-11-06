@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,11 +36,32 @@
         id="shop-content"
       ></div>
     </section>
-    <div class="loading-mask justify-content-end invisible" id="abrirCarrito">
-      <div
-        class="bg-light h-100 fade-in one p-4"
-        style="width: 400px; max-width: 100%; overflow-y: auto"
-      ></div>
+    <div class="abrirCarrito" id="abrirCarrito">
+      <h2 class="cart-title">Your Cart</h2>
+
+      <div class="cart-content">
+        <img class="cart-img" src="Zapatos.webp">
+        <div class="details">
+          <div class="product-title">ZAPATO</div>
+          <div class="product-price">Precio: $35353</div>
+          <input type="number" value="1" class="quantity">
+          <i class='bx bxs-trash cart-remove' id="cart-remove"></i>
+        </div>
+      </div>
+
+      <div class="total-shop">
+        <div class="total-title">Total</div>
+        <div class="total-price">$</div>
+      </div>
+
+      <div class="buybtn">
+        <button type="button" class="btn-buy">Buy Now!</button>
+      </div>
+
+      <div class="cerrarCarrito">
+        <i class='bx bx-x' id="cerrarCarrito"></i>
+      </div>
+
     </div>
     <script src="./code_mercadolibre.js" type="module"></script>
     <script src="../carrito de compras/carrito.js"></script>
