@@ -10,18 +10,18 @@ const cargarDatos = async () => {
       const datos = await respuesta.json();
 
       datos.results.forEach((zapato) => {
-        shoes += `<div class="d-flex col-xs-12 col-sm-6 col-md-4 justify-content-center">
-                    <div class="border-0 rounded bg-white mb-3 shadow-sm">
+        shoes += `<div class="productoss">
+                      <div>
+                        <img class="rounded" src="${zapato.thumbnail}"> 
+                      </div>
                       <div class="title">${zapato.title}</div>
                       <div class="price">Precio: ${zapato.price}</div>
                       <div class="available_quantity">
                         Cantidad Disponible: ${zapato.available_quantity}
                       </div>
-                      <div class="d-flex justify-content-center">
-                        <img class="rounded" src="${zapato.thumbnail}" style="width:75%"> 
-                      </div>
-                    </div>
-                  </div>`;
+                      <div class="cartbutton"><i class="bx bx-shopping-bag carrito" id="carrito"></i></div>
+                    </div></div>
+                  `;
       });
       document.getElementById('shop-content').innerHTML = shoes;
     }
@@ -46,18 +46,19 @@ const mostrarProductos = () => {
   customFetch(2000, productos).then((data) => {
     document.getElementById('shop-content');
     data.forEach((zapato) => {
-      shoes += `<div class="d-flex col-xs-12 col-sm-6 col-md-4 justify-content-center">
-                    <div class="border-0 rounded bg-white mb-3 shadow-sm">
+      shoes += `<div class="productoss">
+      <div>
+                        <img class="rounded" src="${zapato.imagen}"> 
+                      </div>
                       <div class="title">${zapato.title}</div>
                       <div class="price">Precio: ${zapato.price}</div>
                       <div class="available_quantity">
                         Cantidad Disponible: ${zapato.stock}
                       </div>
-                      <div class="d-flex justify-content-center">
-                        <img class="rounded" src="${zapato.imagen}" style="width:75%"> 
-                      </div>
-                    </div>
-                  </div>`;
+                      <div class="cartbutton"> <i class="bx bx-shopping-bag carrito" id="carrito"></i></div>
+                    </div></div>
+
+                `;
     });
     document.getElementById('shop-content').innerHTML = shoes;
   });

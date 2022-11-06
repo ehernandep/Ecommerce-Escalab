@@ -10,7 +10,7 @@ export const productos = [
   },
   {
     id: 2,
-    title: 'POSSESSION BLACK/TAN',
+    title: 'POSSESSION BLACK',
     price: 99.95,
     color: 'black-tan',
     stock: 2,
@@ -82,7 +82,7 @@ export const productos = [
   },
   {
     id: 10,
-    title: 'POSSESSION BRIGHT MULTI',
+    title: 'POSSESSION BRIGHT',
     price: 99.95,
     color: 'multicolor',
     stock: 7,
