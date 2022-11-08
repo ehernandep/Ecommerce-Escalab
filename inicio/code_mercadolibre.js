@@ -1,6 +1,11 @@
 import {productos} from '../productos/productos.js';
 let shoes = '';
 const isOk = true;
+
+const agregarCarrito =()=>{
+  console.log("hola")
+}
+
 const cargarDatos = async () => {
   try {
     const respuesta = await fetch(
@@ -19,7 +24,7 @@ const cargarDatos = async () => {
                       <div class="available_quantity">
                         Cantidad Disponible: ${zapato.available_quantity}
                       </div>
-                      <div class="cartbutton"><i class="bx bx-shopping-bag carrito" id="carrito"></i></div>
+                      <div class="cartbutton"><button class="bx bx-shopping-bag carrito" id="carrito" onclick="${añadirCarrito()}"></button></div>
                     </div></div>
                   `;
       });
@@ -55,7 +60,7 @@ const mostrarProductos = () => {
                       <div class="available_quantity">
                         Cantidad Disponible: ${zapato.stock}
                       </div>
-                      <div class="cartbutton"> <i class="bx bx-shopping-bag carrito" id="carrito"></i></div>
+                      <div class="cartbutton" id="cartbutton"> <button class="bx bx-shopping-bag carrito" id="carrito" onclick="${añadirCarrito()}"></button></div>
                     </div></div>
 
                 `;
@@ -63,7 +68,10 @@ const mostrarProductos = () => {
     document.getElementById('shop-content').innerHTML = shoes;
   });
 };
+
+
 console.log(productos)
 mostrarProductos();
 
 cargarDatos();
+

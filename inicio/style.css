@@ -105,12 +105,16 @@ section {
 .abrirCarrito{
   position: fixed;
   top: 0;
-  right: 0;
+  right: -340px;
   width: 340px;
   min-height: 100vh;
   padding: 20px;
   background-color: #fff;
   box-shadow: -2px 0 4px hsl(0 4% 15% /10%);
+  transition: 0.3s;
+}
+.open{
+  right:0;
 }
 .cart-title{
   text-align: center;
