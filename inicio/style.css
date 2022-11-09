@@ -178,8 +178,14 @@ section {
   display: flex;
   justify-content: center;
 }
+.buybtn{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .btn-buy{
-  margin: 1.5 rem auto 0 auto;
+  margin: 1.5rem auto 0 auto;
   padding: 8px 20px;
   border: none;
   background-color: #000000;
@@ -201,4 +207,19 @@ section {
 #cerrarCarrito:hover{
   font-size: 2.5rem;
   transition: 0.3s;
+}
+.pago{
+  display: none;
+}
+.pagoclick{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.img{
+  width: 80px;
+  margin: 10px;
+}
+.img:hover{
+  width: 90px;
 }
