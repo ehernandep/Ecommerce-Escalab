@@ -1,11 +1,6 @@
-import {productos} from '../productos/productos.js';
+import { productos } from '../productos/productos.js';
 let shoes = '';
 const isOk = true;
-
-const agregarCarrito =()=>{
-  console.log("hola")
-}
-
 const cargarDatos = async () => {
   try {
     const respuesta = await fetch(
@@ -13,8 +8,8 @@ const cargarDatos = async () => {
     );
     if (respuesta.status === 200) {
       const datos = await respuesta.json();
-
       datos.results.forEach((zapato) => {
+        // lo unico que hice fue poner el onclick de una manera diferente a su vez le pase 3 argumentos a la funcion.
         shoes += `<div class="productoss">
                       <div>
                         <img class="rounded" src="${zapato.thumbnail}"> 
@@ -24,8 +19,9 @@ const cargarDatos = async () => {
                       <div class="available_quantity">
                         Cantidad Disponible: ${zapato.available_quantity}
                       </div>
-                      <div class="cartbutton"><button class="bx bx-shopping-bag carrito" id="carrito" onclick="${añadirCarrito()}"></button></div>
-                    </div></div>
+                      
+                      <button class="btn bx bx-shopping-bag carrito" id="carrito" onclick="añadirCarrito('${zapato.title}','${zapato.price}','${zapato.thumbnail}')"></button>
+                   </div>
                   `;
       });
       document.getElementById('shop-content').innerHTML = shoes;
@@ -60,7 +56,7 @@ const mostrarProductos = () => {
                       <div class="available_quantity">
                         Cantidad Disponible: ${zapato.stock}
                       </div>
-                      <div class="cartbutton" id="cartbutton"> <button class="bx bx-shopping-bag carrito" id="carrito" onclick="${añadirCarrito()}"></button></div>
+                      <button class="btn bx bx-shopping-bag carrito" id="carrito" onclick="añadirCarrito('${zapato.title}','${zapato.price}','${zapato.imagen}')"></button>
                     </div></div>
 
                 `;
@@ -68,10 +64,5 @@ const mostrarProductos = () => {
     document.getElementById('shop-content').innerHTML = shoes;
   });
 };
-
-
-console.log(productos)
 mostrarProductos();
-
 cargarDatos();
-
