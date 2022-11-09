@@ -36,3 +36,8 @@ const añadirCarrito = (title, price, img) => {
   // cuando uno guarda los datos debe usar stringify para que quede bien luego hace parse
   localStorage.setItem('item', JSON.stringify(arrayObjetosGuardados));
 };
+
+/* pasos a seguir:
+ - con los datos agarrados del local storage hacer el display de estos en el carrito
+ - seria bacano ponerles una x y hacer una funcion que los elimine del array, puede ser con onclick es facil y se elimina y reemplaza en el
+  display.*/
