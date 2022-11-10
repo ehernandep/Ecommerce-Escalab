@@ -33,11 +33,11 @@ const mostrarProductos = (objetos) => {
   let cartshoes = '';
   objetos.forEach((zapato) => {
     cartshoes += `<div class="d-flex justify-content-center"><img class="cart-img" src=${zapato.img} /></div>
-        <div class="details d-flex justify-content-center">
+        <div>
           <div class="product-title">${zapato.title}</div>
           <div class="product-price">Precio: ${zapato.price}</div>
-          <input type="number" value="1" class="quantity" />
-          <button class="btn bx bxs-trash cart-remove" id="cart-remove" onclick="borrarCarrito('${zapato.title}')"></button>
+          <div class="d-flex justify-content-center"><button class="btn bx bxs-trash cart-remove" id="cart-remove" onclick="borrarCarrito('${zapato.title}')"></button></div>
+          <div class="lineSeparation"></div>
         </div>`;
   });
   document.getElementById('cart-content').innerHTML = cartshoes;
