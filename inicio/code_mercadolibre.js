@@ -1,4 +1,4 @@
-import {productos} from '../productos/productos.js';
+import { productos } from '../productos/productos.js';
 let shoes = '';
 const isOk = true;
 const cargarDatos = async () => {
@@ -8,20 +8,21 @@ const cargarDatos = async () => {
     );
     if (respuesta.status === 200) {
       const datos = await respuesta.json();
-
       datos.results.forEach((zapato) => {
-        shoes += `<div class="d-flex col-xs-12 col-sm-6 col-md-4 justify-content-center">
-                    <div class="border-0 rounded bg-white mb-3 shadow-sm">
+        // lo unico que hice fue poner el onclick de una manera diferente a su vez le pase 3 argumentos a la funcion.
+        shoes += `<div class="productoss">
+                      <div>
+                        <img class="rounded" src="${zapato.thumbnail}"> 
+                      </div>
                       <div class="title">${zapato.title}</div>
                       <div class="price">Precio: ${zapato.price}</div>
                       <div class="available_quantity">
                         Cantidad Disponible: ${zapato.available_quantity}
                       </div>
-                      <div class="d-flex justify-content-center">
-                        <img class="rounded" src="${zapato.thumbnail}" style="width:75%"> 
-                      </div>
-                    </div>
-                  </div>`;
+                      
+                      <button class="btn bx bx-shopping-bag carrito" id="carrito" onclick="añadirCarrito('${zapato.title}','${zapato.price}','${zapato.thumbnail}')"></button>
+                   </div>
+                  `;
       });
       document.getElementById('shop-content').innerHTML = shoes;
     }
@@ -46,23 +47,22 @@ const mostrarProductos = () => {
   customFetch(2000, productos).then((data) => {
     document.getElementById('shop-content');
     data.forEach((zapato) => {
-      shoes += `<div class="d-flex col-xs-12 col-sm-6 col-md-4 justify-content-center">
-                    <div class="border-0 rounded bg-white mb-3 shadow-sm">
+      shoes += `<div class="productoss">
+      <div>
+                        <img class="rounded" src="${zapato.imagen}"> 
+                      </div>
                       <div class="title">${zapato.title}</div>
                       <div class="price">Precio: ${zapato.price}</div>
                       <div class="available_quantity">
                         Cantidad Disponible: ${zapato.stock}
                       </div>
-                      <div class="d-flex justify-content-center">
-                        <img class="rounded" src="${zapato.imagen}" style="width:75%"> 
-                      </div>
-                    </div>
-                  </div>`;
+                      <button class="btn bx bx-shopping-bag carrito" id="carrito" onclick="añadirCarrito('${zapato.title}','${zapato.price}','${zapato.imagen}')"></button>
+                    </div></div>
+
+                `;
     });
     document.getElementById('shop-content').innerHTML = shoes;
   });
 };
-
 mostrarProductos();
-
 cargarDatos();

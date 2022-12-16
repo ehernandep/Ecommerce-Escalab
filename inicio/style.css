@@ -14,6 +14,7 @@ img {
 body {
   color: black;
   text-decoration: none;
+  font-family: sans-serif;
 }
 header {
   position: fixed;
@@ -46,25 +47,182 @@ section {
 #cart-icon {
   cursor: pointer;
 }
-.section-title {
+.section-title{
   font-size: 1.5rem;
-  font-weight: 250;
+  font-weight: 800;
   text-align: center;
+
 }
 .shopContainer {
   margin-top: 1rem;
+  width: 100%;
+}
+.shop-content{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,auto));
+  gap: 1.5rem;
+  margin: auto;
+  padding-left: 1.5rem;
+}
+.rounded{
+  max-width: 200px;
+  min-width: 100px;
+  max-height: 300px;
+  min-height: 200px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  margin-top: 40px;
+}
+.title{
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+.cartbutton{
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.productoss{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+.productoss:hover{
+  padding: 10px;
+  border: 1px solid #000000;
+  transition: 0.3s;
+}
+.carrito{
+  position: absolute;
+  bottom:0;
+  right: 0;
+  background-color: #000000;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
 }
 
-.loading-mask {
+.abrirCarrito{
   position: fixed;
-  z-index: 1022;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  right: -340px;
+  width: 340px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: -2px 0 4px hsl(0 4% 15% /10%);
+  transition: 0.3s;
+}
+.open{
+  right:0;
+}
+.cart-title{
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 25px;
+  margin-bottom: 30px;
+}
+.cart-content{
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-content: center;
   align-items: center;
+}
+.cart-img{
+  height: 100px;
+  object-fit: contain;
+}
+.details{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.product-title{
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+}
+.product-price{
+  font-size: 0.9rem;
+  text-align: center;
+}
+#cart-remove{
+  position: absolute;
+  right: 30px;
+  margin-top: -120px;
+  font-size: 22px;
+  color: crimson;
+  cursor: pointer;
+  align-items: center;
+  margin-bottom: 10px;
+}
+#cart-remove:hover{
+  font-size: 24px;
+  transition: 0.3s;
+}
+.lineSeparation{
+  border-bottom: 1px solid #000000;
+  margin-bottom: 20px;
+}
+.total-shop{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+  border-top: 1px solid #000000;
+}
+.total-title{
+  font-size: 1rem;
+  font-weight: 600;
+}
+.total-price{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.buybtn{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.btn-buy{
+  margin: 1.5rem auto 0 auto;
+  padding: 8px 20px;
+  border: none;
+  background-color: #000000;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.btn-buy:hover{
+  padding: 10px 22px;
+  transition: 0.4s;
+}
+#cerrarCarrito{
+  position: absolute;
+  font-size: 2rem;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+#cerrarCarrito:hover{
+  font-size: 2.5rem;
+  transition: 0.3s;
+}
+.pago{
+  display: none;
+}
+.pagoclick{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.img{
+  width: 80px;
+  margin: 10px;
+}
+.img:hover{
+  width: 90px;
 }
